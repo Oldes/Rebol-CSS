@@ -85,7 +85,7 @@ p{background-position:50% 50%}
   outline-color: khaki;
 }
 <!--==-->
-.color{color:rgb(123,123,123);background-color:#ffeedd;filter:chroma(color="#FFFFFF"); outline-color:khaki}
+.color{color:rgb(123,123,123);background-color:#ffeedd;filter:chroma(color="#FFFFFF");outline-color:khaki}
 <!----------------------------------->
 
 a {
@@ -201,3 +201,7 @@ a {
 a{width:calc(12/2);width:calc(12*2);width:calc(12 - 2);background:repeating-linear-gradient(top left -45deg,#000,#000 calc(1 + 1),#fff 5px,#fff 10px)}
 <!----------------------------------->
 
+a /**/  { /**/ color: /**/  red /**/ }
+<!--==-->
+a{color:red}
+<!----------------------------------->

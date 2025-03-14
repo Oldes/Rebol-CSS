@@ -94,8 +94,8 @@ css-tokenize: function/with [
 	parse/case css [
 		any *whitespace
 		collect any [
-			  "<!--" thru "-->"
-			| "/*" thru "*/"
+			  "<!--" thru "-->" any *whitespace
+			| "/*" thru "*/" any *whitespace
 			| keep [
 				  *token-char
 				| *combinator
