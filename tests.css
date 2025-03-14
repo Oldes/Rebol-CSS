@@ -100,7 +100,7 @@ a {
  background: repeating-linear-gradient(top left -45deg, black, black 5px, white 5px, white 10px);
 }
 <!--==-->
-a{background-color:white;background:repeating-linear-gradient(top left -45deg,black,black 5px,white 5px,white 10px)}
+a{background-color:#fff;background:repeating-linear-gradient(top left -45deg,#000,#000 5px,#fff 5px,#fff 10px)}
 <!----------------------------------->
 
 @media print {
@@ -179,7 +179,7 @@ a{background-image:url("http://dude.com");background:url("http://dude.com/hello 
  color : white ; 
 }
 <!--==-->
-a,b{color:white}
+a,b{color:#fff}
 <!----------------------------------->
 
 @media only all and ( max-width: 50em ), only all and (max-device-width : 800px), only all and (max-width:780px) {
@@ -198,6 +198,6 @@ a {
  background: repeating-linear-gradient( top left   -45deg , black , black calc( 1 + 1 ) , white 5px , white 10px );
 }
 <!--==-->
-a{width:calc(12/2);width:calc(12*2);width:calc(12 - 2);background:repeating-linear-gradient(top left -45deg,black,black calc(1 + 1),white 5px,white 10px)}
+a{width:calc(12/2);width:calc(12*2);width:calc(12 - 2);background:repeating-linear-gradient(top left -45deg,#000,#000 calc(1 + 1),#fff 5px,#fff 10px)}
 <!----------------------------------->
 

@@ -144,6 +144,8 @@ css-minify: function [tokens][
 			  #" " #"/" #" " keep (#"/")
 			| #" " #"*" #" " keep (#"*")
 		]
+		| "black" keep ("#000")
+		| "white" keep ("#fff")
 		| keep skip
 	]]
 ]
