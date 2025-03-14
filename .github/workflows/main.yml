@@ -1,15 +1,15 @@
 name: 'Rebol-CSS CI'
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push or pull request events but only for the master origin
   push:
-    branches: [ master ]
+    branches: [ origin ]
     paths:
       - ci-test.r3
       - css.reb
       - .github/workflows/main.yml
 
   pull_request:
-    branches: [ master ]
+    branches: [ origin ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
