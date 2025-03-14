@@ -47,40 +47,6 @@ rules: context [
 	=type_selector:    [opt =namespace_prefix =ident]
 	=universal:        [opt =namespace_prefix #"*"]
 	=class:            [#"." =ident]
-	=attrib: [
-		#"[" =ws opt =namespace_prefix =ident =ws
-		opt [
-			[
-				"^=" | ;; PREFIXMATCH
-				"$=" | ;; SUFFIXMATCH
-				"*=" | ;; SUBSTRINGMATCH
-				#"=" |
-				"~=" | ;; INCLUDES
-				"|=" | ;; DASHMATCH
-			] =ws [=ident | =string] =ws
-		]
-		#"]"
-	]
-	=pseudo: [#":" opt #":" [ =ident | functional_pseudo ]] ;; e.g. :hover or ::before
-;	negation: [#":" *n *o *t #"(" =ws [=type_selector | =universal | =hash | =class | =attrib | =pseudo] =ws #")"]
-;	simple_selector_sequence: [
-;		;; A `simple_selector_sequence` is a sequence of simple selectors that are not separated
-;		;; by combinators (like spaces, > , +, or ~). It always starts with a type selector or
-;		;; a universal selector, and then can be followed by other simple selectors.
-;		[=type_selector | =universal] ;; e.g. div or *
-;		any [=hash | =class | =attrib | =pseudo | negation]
-;		|
-;		some [=hash | =class | =attrib | =pseudo | negation]
-;	]
-;	expression: [
-;		some [ =ws [#"+" | #"-" | =number =ident | =number | =string | =ident] =ws ]
-;	]
-;	functional_pseudo: [
-;		=ident #"(" =ws expression #")"
-;	]
-;	combinator: [=ws [#"+" | #">" | #"~"] =ws]
-;	selector: [simple_selector_sequence any [ combinator simple_selector_sequence ]]
-;	selectors_group: [selector any [ =ws #";" =ws selector]]
 ]
 
 css-tokenize: function/with [
@@ -104,8 +70,6 @@ css-tokenize: function/with [
 				| =universal
 				| =hash
 				| =class
-				| =attrib
-				| =pseudo
 				| =ident
 			]
 			| copy tmp: =number keep (transcode/one tmp) opt [keep ["%" | =name] ]

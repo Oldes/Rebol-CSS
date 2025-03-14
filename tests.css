@@ -215,3 +215,40 @@ b {
 <!--==-->
 a{}b{overflow:none}
 <!----------------------------------->
+
+/* Select divs that contain an image */
+div:has(img) {
+  border: 2px solid green;
+}
+<!--==-->
+div:has(img){border:2px solid green}
+<!----------------------------------->
+
+/* Select every third paragraph */
+p:nth-child(3n) {
+  color: blue;
+}
+<!--==-->
+p:nth-child(3n){color:blue}
+<!----------------------------------->
+
+/* Adding a decorative icon before a link */
+a.icon-link::before {
+  content: "▶"; /* Unicode character for a right-pointing triangle */
+  margin-right: 5px;
+  color: blue;
+}
+<!--==-->
+a.icon-link::before{content:"▶";margin-right:5px;color:blue}
+<!----------------------------------->
+
+    @namespace svg "http://www.w3.org/2000/svg";
+
+    svg|rect {
+      fill: blue;
+      stroke: black;
+      stroke-width: 2;
+    }
+<!--==-->
+@namespace svg "http://www.w3.org/2000/svg";svg|rect{fill:blue;stroke:#000;stroke-width:2}
+<!----------------------------------->
