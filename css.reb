@@ -140,6 +140,10 @@ css-minify: function [tokens][
 		| #"-" ahead quote 0
 		;= and in a media query must be separated with a space
 		| "and" #" " ahead #"(" keep ("and ")
+		| if (expr?) [
+			  #" " #"/" #" " keep (#"/")
+			| #" " #"*" #" " keep (#"*")
+		]
 		| keep skip
 	]]
 ]
