@@ -119,10 +119,10 @@ css-minify: function [tokens][
 	unless block? tokens [tokens: css-tokenize tokens]
 	ajoin parse tokens [collect any [
 		  #";" opt #" " ahead #"}" ;== removes ; in front of }
-		| #"{" #" " keep (#"{")
+		| #"{" any [#" " | #";"] keep (#"{")
 		| #"}" #" " keep (#"}")
 		| #":" #" " keep (#":")
-		| #";" #" " keep (#";")
+		| #";" any [#" " | #";"] [ahead #"}" | keep (#";")]
 		| #"(" (expr?: on ) #" " keep (#"(")
 		| #")" (expr?: off) #" " keep (#")")
 		| #"," #" " keep (#",")
