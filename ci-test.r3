@@ -12,6 +12,7 @@ test-css: function[css [file! binary! url! string!]][
 		any [file? css url? css] [css: read/string css]
 		binary? css [css: to string! css]
 	]
+	css: deline css
 	num: 0
 	failed: 0
 	parse css [
