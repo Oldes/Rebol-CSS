@@ -142,8 +142,6 @@ css-minify: function [tokens][
 	]]
 ]
 
-system/options/log/ebml: 0
-
 register-codec [
 	name:  'css
 	type:  'text
