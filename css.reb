@@ -3,7 +3,7 @@ Rebol [
 	type: module
 	name: css
 	Date:    14-Mar-2025
-	Version: 0.1.0
+	Version: 0.1.1
 	Author:  @Oldes
 	Home:    https://github.com/Oldes/Rebol-CSS
 	Rights:  MIT
@@ -138,6 +138,8 @@ css-minify: function [tokens][
 		]
 		| #"+" ahead number!
 		| #"-" ahead quote 0
+		;= and in a media query must be separated with a space
+		| "and" #" " ahead #"(" keep ("and ")
 		| keep skip
 	]]
 ]
