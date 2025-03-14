@@ -1,0 +1,14 @@
+/*
+!/.gitignore
+!/.gitattributes
+!/.github
+!/.editorconfig
+!*.nest
+!*.reb
+!*.css
+!/src
+!/assets
+!/README.md
+!/LICENSE
+!/ci-test.r3
+!/test.r3
